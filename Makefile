@@ -33,7 +33,7 @@ test-coverage:
 # Code quality
 lint:
 	@echo "Running go vet..."
-	@go vet ./...
+	@go vet ./pkg/...
 	@echo "Checking formatting..."
 	@gofmt -l . | tee /tmp/gofmt.out
 	@test ! -s /tmp/gofmt.out || (echo "Code is not formatted correctly. Run 'go fmt ./...' to fix." && exit 1)
@@ -72,3 +72,8 @@ run-cli:
 	@echo "Running CLI example..."
 	@echo "Make sure to set CIVIC_CLIENT_ID, CIVIC_CLIENT_SECRET, and CIVIC_ISSUER environment variables"
 	@bin/cli_example || make build && bin/cli_example
+
+# Vet examples individually to avoid main function conflicts
+	@echo "Vetting examples..."
+	@go vet examples/web_server.go
+	@go vet examples/cli_example.go

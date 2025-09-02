@@ -62,9 +62,9 @@ func (c *Config) Validate() error {
 	if c.Timeout == 0 {
 		c.Timeout = 30 * time.Second
 	}
-	
+
 	c.HTTPClient.Timeout = c.Timeout
-	
+
 	return nil
 }
 
@@ -113,15 +113,15 @@ type UserInfo struct {
 
 // Claims represents ID token claims
 type Claims struct {
-	Issuer        string `json:"iss"`
-	Subject       string `json:"sub"`
-	Audience      string `json:"aud"`
-	Expiry        int64  `json:"exp"`
-	IssuedAt      int64  `json:"iat"`
-	Nonce         string `json:"nonce,omitempty"`
-	AuthTime      int64  `json:"auth_time,omitempty"`
-	SessionState  string `json:"session_state,omitempty"`
-	
+	Issuer       string `json:"iss"`
+	Subject      string `json:"sub"`
+	Audience     string `json:"aud"`
+	Expiry       int64  `json:"exp"`
+	IssuedAt     int64  `json:"iat"`
+	Nonce        string `json:"nonce,omitempty"`
+	AuthTime     int64  `json:"auth_time,omitempty"`
+	SessionState string `json:"session_state,omitempty"`
+
 	// Standard profile claims
 	Name              string `json:"name,omitempty"`
 	GivenName         string `json:"given_name,omitempty"`

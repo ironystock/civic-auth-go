@@ -33,15 +33,15 @@ type JWKSet struct {
 
 // TokenManager handles token operations
 type TokenManager struct {
-	Client  *Client
-	jwkSet  *JWKSet
+	Client   *Client
+	jwkSet   *JWKSet
 	jwkCache map[string]*rsa.PublicKey
 }
 
 // NewTokenManager creates a new token manager
 func NewTokenManager(client *Client) *TokenManager {
 	return &TokenManager{
-		Client:  client,
+		Client:   client,
 		jwkCache: make(map[string]*rsa.PublicKey),
 	}
 }
@@ -296,12 +296,12 @@ func (s *InMemoryTokenStorage) Retrieve(userID string) (*TokenResponse, error) {
 	if userID == "" {
 		return nil, errors.New("user ID cannot be empty")
 	}
-	
+
 	tokens, exists := s.tokens[userID]
 	if !exists {
 		return nil, errors.New("tokens not found for user")
 	}
-	
+
 	return tokens, nil
 }
 
@@ -310,7 +310,7 @@ func (s *InMemoryTokenStorage) Delete(userID string) error {
 	if userID == "" {
 		return errors.New("user ID cannot be empty")
 	}
-	
+
 	delete(s.tokens, userID)
 	return nil
 }

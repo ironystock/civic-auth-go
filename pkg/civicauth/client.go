@@ -40,7 +40,7 @@ func NewClient(config *Config) (*Client, error) {
 // discoverProvider fetches the OIDC provider metadata
 func (c *Client) discoverProvider(ctx context.Context) error {
 	wellKnownURL := strings.TrimSuffix(c.config.Issuer, "/") + "/.well-known/openid_configuration"
-	
+
 	req, err := http.NewRequestWithContext(ctx, "GET", wellKnownURL, nil)
 	if err != nil {
 		return fmt.Errorf("failed to create request: %w", err)
@@ -107,11 +107,11 @@ func (c *Client) GetAuthCodeURL(opts *AuthCodeURLOptions) (string, error) {
 	}
 
 	params := url.Values{
-		"response_type":   []string{"code"},
-		"client_id":       []string{c.config.ClientID},
-		"redirect_uri":    []string{c.config.RedirectURL},
-		"scope":           []string{strings.Join(c.config.Scopes, " ")},
-		"response_mode":   []string{"query"},
+		"response_type": []string{"code"},
+		"client_id":     []string{c.config.ClientID},
+		"redirect_uri":  []string{c.config.RedirectURL},
+		"scope":         []string{strings.Join(c.config.Scopes, " ")},
+		"response_mode": []string{"query"},
 	}
 
 	// Add optional parameters
@@ -278,11 +278,11 @@ func (c *Client) GetLogoutURL(postLogoutRedirectURI, idTokenHint string) (string
 	}
 
 	params := url.Values{}
-	
+
 	if postLogoutRedirectURI != "" {
 		params.Set("post_logout_redirect_uri", postLogoutRedirectURI)
 	}
-	
+
 	if idTokenHint != "" {
 		params.Set("id_token_hint", idTokenHint)
 	}

@@ -22,7 +22,6 @@ func main() {
 		log.Fatalf("Failed to create client: %v", err)
 	}
 
-
 	// Example 1: Generate authorization URL with PKCE
 	fmt.Println("=== Authorization Code Flow with PKCE ===")
 	authURL, state, codeVerifier, err := client.CreateAuthorizationFlow()
