@@ -60,3 +60,6 @@ pids
 # Build artifacts
 build/
 target/
+
+
+setup_github.sh
