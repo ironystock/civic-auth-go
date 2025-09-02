@@ -59,6 +59,7 @@ Your repository contains:
 - ✅ Change log (`CHANGELOG.md`)
 - ✅ MIT License
 - ✅ Proper `.gitignore`
+- ✅ AI agent guidance (`AGENTS.md`)
 
 ## 🎯 After Pushing
 
