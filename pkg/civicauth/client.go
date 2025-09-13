@@ -39,7 +39,7 @@ func NewClient(config *Config) (*Client, error) {
 
 // discoverProvider fetches the OIDC provider metadata
 func (c *Client) discoverProvider(ctx context.Context) error {
-	wellKnownURL := strings.TrimSuffix(c.config.Issuer, "/") + "/.well-known/openid_configuration"
+	wellKnownURL := strings.TrimSuffix(c.config.Issuer, "/") + "/.well-known/openid-configuration"
 
 	req, err := http.NewRequestWithContext(ctx, "GET", wellKnownURL, nil)
 	if err != nil {
