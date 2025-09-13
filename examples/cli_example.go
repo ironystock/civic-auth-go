@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"captured.ventures/civic-auth-go/pkg/civicauth"
+	"github.com/ironystock/civic-auth-go/pkg/civicauth"
 )
 
 func main() {

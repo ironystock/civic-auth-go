@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"os"
 
-	"captured.ventures/civic-auth-go/pkg/civicauth"
+	"github.com/ironystock/civic-auth-go/pkg/civicauth"
 )
 
 // Session storage (in production, use a proper session store)

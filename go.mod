@@ -1,4 +1,4 @@
-module captured.ventures/civic-auth-go
+module github.com/ironystock/civic-auth-go
 
 go 1.24.6
 
